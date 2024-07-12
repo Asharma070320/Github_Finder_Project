@@ -36,11 +36,11 @@ const Header = () => {
               My Profile
             </NavLink>
           </li> */}
-          <li className="mx-3 border-b-2 border-white/[0] hover:border-white/[100] ">
+          {/* <li className="mx-3 border-b-2 border-white/[0] hover:border-white/[100] ">
             <NavLink to="/404" className={(navData) => navData.isActive ? "text-orange-400" : ""}>
               404 Page
             </NavLink>
-          </li>
+          </li> */}
         </ul>
         <label onChange={(e) => { e.target.checked ? setTheme("white") : setTheme("dark"); }} className="chkbx ml-5">
           <input type="checkbox" />
@@ -77,11 +77,11 @@ const Header = () => {
             My Profile
           </NavLink>
         </li> */}
-        <li onClick={mobileMenuClose} className="p-3">
+        {/* <li onClick={mobileMenuClose} className="p-3">
           <NavLink to="/404" className={(navData) => navData.isActive ? "text-orange-400" : ""}>
             404 Page
           </NavLink>
-        </li>
+        </li> */}
       </ul>
     </header>
   );
