@@ -7,13 +7,13 @@ import Loader from "../Components/Loader";
 
 const HomePage = () => {
 
-  //! USE STATES
+  // USE STATES
   const [input, setInput] = useState("");
   const [userSearch, setUserSearch] = useState([]);
   const [loading, setLoading] = useState(false);
   const [totalItemCount, setTotalItemCount] = useState([]);
 
-  //! SEARCH USER FUNCTION
+  // SEARCH USER FUNCTION
   const onSubmitHandler = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -33,11 +33,6 @@ const HomePage = () => {
     }
   };
 
-  //! CHANGE PAGINATION SEARCH USER
-  const handlePageClick = (data) => {
-    let currentPage = data.selected + 1;
-    axios.get(`https://api.github.com/search/users?q=${input}&page=${currentPage}`).then(res => setUserSearch(res.data.items));
-  };
 
   return (
     <>
@@ -57,31 +52,6 @@ const HomePage = () => {
           <button type="submit" className="btn btn-primary">Search</button>
         </div>
       </form>
-
-      {/* Pagination Bar */}
-      {/* <div className="pagination text-center">
-        {userSearch.length ?
-          <ReactPaginate
-            className={'p-5'}
-            previousLabel={'<'}
-            nextLabel={'>'}
-            breakLabel={'...'}
-            pageCount={totalItemCount.total_count ? (totalItemCount.total_count > 999 ? 32 : Math.ceil(totalItemCount.total_count / 30)) : 0}
-            marginPagesDisplayed={3}
-            pageRangeDisplayed={1}
-            onPageChange={handlePageClick}
-            containerClassName={'btn-group flex justify-center p-5'}
-            pageClassName={'btn'}
-            pageLinkClassName={'page-link'}
-            previousClassName={'btn btn-primary'}
-            previousLinkClassName={'page-link'}
-            nextClassName={'btn btn-primary'}
-            nextLinkClassName={'page-link'}
-            breakClassName={'btn'}
-            breakLinkClassName={'page-link'}
-            activeClassName={'btn-active'}
-          /> : ""}
-      </div> */}
 
       {/* USER LIST CONTAINER*/}
       <div className="flex w-5/6 flex-wrap mx-auto">

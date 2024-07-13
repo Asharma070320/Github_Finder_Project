@@ -7,7 +7,7 @@ import ThemeContext from "../Context/ThemeContext";
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
-  //! Mobile Menu Functions
+  // Mobile Menu Functions
   const mobileMenu = () => { document.querySelector('#mobile-menu').classList.toggle('hidden') }
   const mobileMenuClose = () => { document.querySelector('#mobile-menu').classList.add('hidden') }
 
@@ -31,16 +31,7 @@ const Header = () => {
               Home
             </NavLink>
           </li>
-          {/* <li className="mx-3 border-b-2 border-white/[0] hover:border-white/[100] ">
-            <NavLink to="/myprofile" className={(navData) => navData.isActive ? "text-orange-400" : ""}>
-              My Profile
-            </NavLink>
-          </li> */}
-          {/* <li className="mx-3 border-b-2 border-white/[0] hover:border-white/[100] ">
-            <NavLink to="/404" className={(navData) => navData.isActive ? "text-orange-400" : ""}>
-              404 Page
-            </NavLink>
-          </li> */}
+         
         </ul>
         <label onChange={(e) => { e.target.checked ? setTheme("white") : setTheme("dark"); }} className="chkbx ml-5">
           <input type="checkbox" />
@@ -51,14 +42,7 @@ const Header = () => {
 
       {/* Mobile Right Bar */}
       <div className="md:hidden flex mr-2">
-        {/* Mobile Theme Button */}
-        {/* <label onChange={(e) => { e.target.checked ? setTheme("white") : setTheme("dark"); }} className="chkbx md:hidden mr-4">
-          <input type="checkbox" />
-          <span className="x"></span>
-          <div className="absolute text-sm left-1.5">
-            {theme === "dark" ? "LIGHT" : "DARK"}
-          </div>
-        </label> */}
+        
         {/* Mobile Hamburger Btn */}
         <button onClick={mobileMenu} className=" md:hidden">
           <AiOutlineMenu className="text-3xl" />
@@ -72,16 +56,7 @@ const Header = () => {
             Home
           </NavLink>
         </li>
-        {/* <li onClick={mobileMenuClose} className="p-3">
-          <NavLink to="/myprofile" className={(navData) => navData.isActive ? "text-orange-400" : ""}>
-            My Profile
-          </NavLink>
-        </li> */}
-        {/* <li onClick={mobileMenuClose} className="p-3">
-          <NavLink to="/404" className={(navData) => navData.isActive ? "text-orange-400" : ""}>
-            404 Page
-          </NavLink>
-        </li> */}
+       
       </ul>
     </header>
   );
